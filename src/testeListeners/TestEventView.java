@@ -1,5 +1,7 @@
 package testeListeners;
 
+import java.awt.Dimension;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -16,6 +18,7 @@ public class TestEventView implements ActionListener{
 
 		JFrame janela = new JFrame("Teste de Evento");
 		JPanel painel = new JPanel();
+		GridLayout layout = new GridLayout(2, 1);
 		lblTexto = new JLabel("Teste de pressionamento do botão");
 		JButton btnOK = new JButton("Aperte-me");
 
@@ -23,7 +26,9 @@ public class TestEventView implements ActionListener{
 		//btnOK.addActionListener(ld);
 		btnOK.addActionListener(this);
 		
+		painel.setLayout(layout);
 		painel.add(lblTexto);
+		lblTexto.setHorizontalAlignment(0);
 		painel.add(btnOK);
 		janela.setContentPane(painel);
 
@@ -38,7 +43,7 @@ public class TestEventView implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		lblTexto.setText("botão pressionado");
+		lblTexto.setText("Botão pressionado");
 		
 	}
 }
